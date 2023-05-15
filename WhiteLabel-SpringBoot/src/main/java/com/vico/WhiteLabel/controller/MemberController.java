@@ -42,7 +42,7 @@ public class MemberController {
     public Map<String, Boolean> deleteMember(@PathVariable(value = "id") Long id)
             throws Throwable {
         Member member = (Member) service.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Member1 not found for this id :: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Member not found for this id :: " + id));
 
         service.deleteMember(id);
         Map<String, Boolean> response = new HashMap<>();
